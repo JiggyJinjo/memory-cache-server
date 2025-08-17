@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../libs/memory-cache"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {

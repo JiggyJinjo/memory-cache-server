@@ -1,269 +1,396 @@
 {
-	"info": {
-		"_postman_id": "f9cd25ee-177f-4e32-ad06-f680a0b2953a",
-		"name": "test local",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38112157"
-	},
-	"item": [
-		{
-			"name": "Info",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}",
-					"host": [
-						"{{baseURL}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "health",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}/api/health",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"health"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "stats",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}/api/cache/stats",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache",
-						"stats"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "keys",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}/api/cache/keys",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache",
-						"keys"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "key",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}/api/cache/:key",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache",
-						":key"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					],
-					"variable": [
-						{
-							"key": "key",
-							"value": "key1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add key",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"key\": \"key5\",\n    \"value\": \"value1\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseURL}}/api/cache",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update key",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"value\": \"newValue\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseURL}}/api/cache/:key",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache",
-						":key"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					],
-					"variable": [
-						{
-							"key": "key",
-							"value": "key1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete key",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"value\": \"newValue\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseURL}}/api/cache/:key",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache",
-						":key"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					],
-					"variable": [
-						{
-							"key": "key",
-							"value": "key1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "flush",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseURL}}/api/cache",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"api",
-						"cache"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"variable": [
-		{
-			"key": "baseURL",
-			"value": "http://localhost:3000",
-			"type": "default"
-		}
-	]
+  "info": {
+    "_postman_id": "f9cd25ee-177f-4e32-ad06-f680a0b2953a",
+    "name": "test local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38112157"
+  },
+  "item": [
+    {
+      "name": "Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}",
+          "host": [
+            "{{baseURL}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/health",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/cache/stats",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "keys",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/cache/keys",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "keys"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "key",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/cache/:key",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            ":key"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ],
+          "variable": [
+            {
+              "key": "key",
+              "value": "key1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add key",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"key\": \"key5\",\n    \"value\": \"value1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update key",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"value\": \"newValue\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/:key",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            ":key"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ],
+          "variable": [
+            {
+              "key": "key",
+              "value": "key1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete key",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"value\": \"newValue\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/:key",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            ":key"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ],
+          "variable": [
+            {
+              "key": "key",
+              "value": "key1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "flush",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Batch Set Multiple",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"entries\": [\n        {\n            \"key\": \"user:123\",\n            \"value\": {\n                \"name\": \"John Doe\",\n                \"email\": \"john@example.com\",\n                \"role\": \"admin\"\n            },\n            \"ttl\": 3600000\n        },\n        {\n            \"key\": \"user:456\",\n            \"value\": {\n                \"name\": \"Jane Smith\",\n                \"email\": \"jane@example.com\",\n                \"role\": \"user\"\n            },\n            \"ttl\": 1800000\n        },\n        {\n            \"key\": \"config:app\",\n            \"value\": {\n                \"theme\": \"dark\",\n                \"language\": \"en\",\n                \"notifications\": true\n            },\n            \"ttl\": 86400000\n        },\n        {\n            \"key\": \"session:abc123\",\n            \"value\": {\n                \"userId\": 123,\n                \"loginTime\": \"2025-08-17T10:30:00Z\",\n                \"permissions\": [\"read\", \"write\"]\n            }\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/batch",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "batch"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Batch Get Multiple",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"keys\": [\n        \"user:123\",\n        \"user:456\",\n        \"config:app\",\n        \"session:abc123\",\n        \"nonexistent:key\"\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/getMultiple",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "getMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Batch Delete Multiple",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"keys\": [\n        \"user:123\",\n        \"config:app\",\n        \"nonexistent:key\"\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/deleteMultiple",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "deleteMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cache Cleanup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/cache/cleanup",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "cache",
+            "cleanup"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "http://localhost:3000",
+      "type": "default"
+    }
+  ]
 }

@@ -104,6 +104,7 @@
     }
   },
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "express-validator": "7.2.1"
   }
 }
